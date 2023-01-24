@@ -1,0 +1,475 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Dancing+Script:wght@400;500;600&family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  color: #333;
+  height: 100vh;
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  background-image: url("https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.navigation {
+  height: 6rem;
+  background-color: rgba(34, 34, 34, 0.363);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.navigation h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding-left: 2rem;
+}
+
+.buttonContainer {
+  padding-right: 2rem;
+  display: flex;
+  gap: 6rem;
+}
+
+.show-modal,
+.show-modal-2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  margin: auto;
+  border: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.show-modal:hover,
+.show-modal-2:hover {
+  background-color: #222;
+  color: rgb(255, 255, 255);
+}
+
+.close-modal {
+  position: absolute;
+  font-weight: 300;
+  top: 0.5rem;
+  right: 3rem;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 11;
+}
+.close-modal:hover {
+  color: rgba(208, 207, 207, 0.382);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 2.5rem;
+  text-align: center;
+}
+
+.highlight,
+.highlight2 {
+  position: relative;
+}
+
+.highlight::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+  transform: scale(1.5, 1.07) skewX(-45deg);
+  background-color: rgb(0, 0, 0);
+}
+.highlight2::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-color: rgb(48, 48, 48);
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  padding: 2rem;
+  box-shadow: 0 3rem 5rem rgba(240, 232, 90, 0.47);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    hsla(0, 22%, 7%, 0.493),
+    hsla(51, 100%, 11%, 0.839)
+  );
+
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+/**************************/
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35rem;
+  margin: 1rem;
+} */
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+form div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+}
+
+.modal_heading {
+  color: white;
+  margin: 5rem;
+  font-weight: 500;
+}
+
+input {
+  cursor: pointer;
+  height: 4rem;
+  position: relative;
+  width: 70%;
+  padding: 0.5rem 2rem;
+  font-size: 1.4rem;
+  transition: all 0.5s;
+  margin-bottom: 2rem;
+}
+
+input:hover {
+  color: rgb(255, 255, 255);
+  background: hsla(0, 0%, 100%, 0.344);
+}
+
+input:focus {
+  outline-style: none;
+  border: 1px solid rgba(6, 7, 0, 0.679);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::placeholder {
+  font-size: 1.6rem;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.button {
+  height: 4rem;
+  width: 6rem;
+  background: rgba(51, 51, 51, 0.371);
+  color: white;
+  margin-left: -3rem;
+  margin-top: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.531);
+  padding-right: 6rem;
+  border-radius: 2rem;
+  transition: all 0.5s;
+}
+.button:hover {
+  background-image: linear-gradient(
+    to right,
+    hsla(0, 0%, 3%, 0.685),
+    hsla(65, 53%, 58%, 0.822)
+  );
+  color: white;
+}
+
+/* -----validations icon -----*/
+
+.errorInUserName,
+.errorInEmail,
+.errorInPassword {
+  align-self: flex-start;
+  justify-content: center;
+}
+
+.correct {
+  background-color: rgba(182, 228, 117, 0.309);
+  border-radius: 50%;
+  color: #c0eb75;
+}
+.incorrect {
+  background-color: rgba(254, 254, 254, 0.368);
+  border-radius: 50%;
+  color: #fc0000;
+}
+
+.eye,
+.closeeye {
+  margin-left: -7rem;
+  opacity: 0.5;
+  padding-top: 0.55rem;
+}
+.eye:hover,
+.closeeye {
+  opacity: 1;
+}
+
+/*---------------------------*/
+
+.black {
+  background-color: black;
+  color: white;
+}
+.white {
+  background-color: rgb(204, 204, 204);
+  color: #333;
+}
+
+#black {
+  height: 2rem;
+  width: 2rem;
+  background: black;
+  border-radius: 100%;
+  cursor: pointer;
+}
+#white {
+  height: 2rem;
+  width: 2rem;
+  background: white;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.correctIcon {
+  margin-left: 4rem;
+}
+.incorrectIcon {
+  margin-left: 4rem;
+}
+.correctIconUser,
+.incorrectIconUser {
+  padding-left: 0rem;
+}
+
+.correctEmail,
+.incorrectEmail {
+  padding-left: 0rem;
+}
+/******login************/
+
+.login-container {
+  margin-top: 6rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  gap: 1rem;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: centre;
+
+  padding: 2rem;
+  box-shadow: 0 3rem 5rem rgba(240, 232, 90, 0.47);
+}
+.form {
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.close-modal-2 {
+  position: absolute;
+  font-weight: 300;
+  top: 0.5rem;
+  right: 3rem;
+  font-size: 5rem;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 10000;
+}
+.close-modal-2:hover {
+  color: rgb(215, 215, 215);
+}
+
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+} */
+
+.welcome {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 4rem;
+  text-align: center;
+}
+
+.login__input {
+  /* border: none; */
+  padding: 0.5rem 1.5rem;
+
+  /*   width: 10rem; */
+  border-radius: 5rem;
+  /*   margin-right: 1rem; */
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  transition: all 0.5s;
+  align-self: flex-start;
+}
+/*------------ lable formatter -------*/
+
+.login__input_label {
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+}
+.label_color {
+  color: white;
+  font-size: 1.8rem;
+  background-color: rgba(204, 204, 204, 0.394);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-left: -2rem;
+}
+/*-----------------------------------*/
+
+.login__input:focus {
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.login__input::placeholder {
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+}
+
+.login__btn {
+  border: none;
+  background: none;
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.login__btn:hover {
+  color: #ccc;
+}
+
+.check {
+  display: block;
+  /*   margin: 0 auto; */
+  text-align: center;
+  opacity: 0;
+  height: 10rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  font-family: "Comforter Brush", cursive;
+  border-radius: none;
+  background: none;
+  box-shadow: 0 3rem 5rem rgba(202, 202, 202, 0.679);
+}
+
+/********timer**********/
+.timerDiv {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0;
+}
+
+.logout-timer {
+  padding: 0 0.3rem;
+  font-size: 2rem;
+}
+.logout-timer span {
+  background: rgb(0, 0, 0);
+  color: white;
+  font-size: 2rem;
+}
