@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      style="size: 192 * 192"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-O9EfMCow370AAR1MlPznTYAQ0HhpZ_lPJw&usqp=CAU"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Modal window</title>
+  </head>
+
+  <body>
+    <nav class="navigation">
+      <span class="highlight"
+        ><marquee behavior="scroll"><h1>Registration Form</h1></marquee></span
+      >
+      <div class="buttonContainer">
+        <button class="show-modal">sign-up</button>
+        <!----------------------------------------------->
+        <button class="show-modal-2">Login</button>
+      </div>
+    </nav>
+
+    <!----testing api-->
+    <!-- <button id="api_test_get" class="show-modal-2">
+      Testing for the fetch get
+    </button>
+    <button id="api_test_post" class="show-modal-2">
+      Testing for the fetch post
+    </button> -->
+
+    <!-------------sign-up---------->
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+
+      <button id="black"></button>
+      <button id="white"></button>
+
+      <h1 class="modal_heading">Welcome to sign up page</h1>
+
+      <div class="container">
+        <form>
+          <div>
+            <label class="login__input_label">USER-NAME</label
+            ><ion-icon name="person-add-outline" class="label_color"></ion-icon>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="user"
+              class="userName login__input"
+              placeholder="user-name"
+            />
+            <span class="errorInUserName">
+              <ion-icon
+                name="checkmark-circle-outline"
+                style="font-size: 3rem"
+                class="correctIconUser correct hidden"
+              ></ion-icon>
+
+              <ion-icon
+                name="close-circle-outline"
+                style="font-size: 3rem"
+                class="incorrectIconUser incorrect hidden"
+              ></ion-icon>
+            </span>
+          </div>
+          <div>
+            <label class="login__input_label">EMAIL</label>
+            <ion-icon name="mail-unread-outline" class="label_color"></ion-icon>
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              class="email login__input"
+              placeholder="raul@gmail.com"
+              required
+            />
+            <span class="errorInEmail">
+              <ion-icon
+                name="checkmark-circle-outline"
+                style="font-size: 3rem"
+                class="correctEmail correct hidden"
+              ></ion-icon>
+
+              <ion-icon
+                name="close-circle-outline"
+                style="font-size: 3rem"
+                class="incorrectEmail incorrect hidden"
+              ></ion-icon>
+            </span>
+          </div>
+          <div>
+            <label class="login__input_label">PIN</label>
+            <ion-icon name="lock-closed-outline" class="label_color"></ion-icon>
+          </div>
+          <div>
+            <input
+              type="password"
+              class="createPin login__input"
+              name="password"
+              maxlength="4"
+              placeholder="4-digit"
+              autocomplete="off"
+            />
+          </div>
+          <div>
+            <label class="login__input_label">CONFIRM-PIN</label>
+            <ion-icon name="lock-open-outline" class="label_color"></ion-icon>
+          </div>
+          <div>
+            <input
+              type="password"
+              class="confirmPin login__input"
+              name="confirm-password"
+              maxlength="4"
+              placeholder="confirm-pin"
+              autocomplete="off"
+            />
+            <span class="errorInPassword">
+              <ion-icon
+                name="eye-outline"
+                style="font-size: 3rem"
+                class="eye"
+              ></ion-icon>
+              <ion-icon
+                name="eye-off-outline"
+                style="font-size: 3rem"
+                class="closeeye hidden"
+              ></ion-icon>
+              <ion-icon
+                name="checkmark-circle-outline"
+                style="font-size: 3rem"
+                class="correctIcon correct hidden"
+              ></ion-icon>
+
+              <ion-icon
+                name="close-circle-outline"
+                style="font-size: 3rem"
+                class="incorrectIcon incorrect hidden"
+              ></ion-icon>
+            </span>
+          </div>
+          <div class="button-container">
+            <input class="button" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!----------------->
+    <div class="login-container hidden">
+      <div class="login">
+        <p class="welcome">Welcome Back</p>
+
+        <form class="form">
+          <div>
+            <label class="login__input_label">USER</label
+            ><ion-icon name="person-add-outline" class="label_color"></ion-icon>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="user"
+              class="login__input login__input--user"
+            />
+          </div>
+
+          <!-- In practice, use type="password" -->
+          <div>
+            <label class="login__input_label">PIN</label>
+            <ion-icon name="lock-closed-outline" class="label_color"></ion-icon>
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="pin"
+              maxlength="4"
+              class="login__input login__input--pin"
+            />
+          </div>
+
+          <button class="login__btn">&rarr;</button>
+          <br />
+        </form>
+
+        <button class="close-modal-2">&times;</button>
+      </div>
+    </div>
+    <div type="text" class="check"></div>
+    <!----------------------timer------------------------->
+    <div class="timerDiv">
+      <p class="logout-timer">
+        You will be logged out in <span class="timer"></span>
+      </p>
+    </div>
+
+    <!----------------------------------------------->
+    <div class="overlay hidden"></div>
+  </body>
+</html>
