@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Playfair+Display:wght@400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 62.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://seekvectorlogo.net/wp-content/uploads/2019/03/raymond-fine-fabrics-vector-logo.png");
+  background-size: 100% 100%;
+  /* background-image: linear-gradient(
+    rgba(255, 0, 106, 0.41),
+    rgba(255, 72, 0, 0.421),
+    rgba(0, 0, 255, 0.085)
+  ); */
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+
+  overflow: hidden;
+}
+.hidden {
+  display: none !important;
+}
+
+.frame {
+  position: relative;
+  border: none;
+  /* font-size: 50%; */
+  width: 40vw;
+  height: 60vh;
+  overflow: hidden;
+  background-color: rgb(229, 227, 227);
+}
+.frame::after {
+  content: "+";
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: rgb(19, 19, 19);
+  background-color: rgb(229, 227, 227);
+  position: absolute;
+  top: -3rem;
+  right: -5rem;
+  z-index: 100;
+  padding: 4rem 4rem 0.5rem 4rem;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+button {
+  font-family: "Abel", sans-serif;
+  font-family: "Playfair Display", serif;
+
+  color: rgba(171, 23, 23, 0.969);
+  background-color: white;
+  font-size: 1.4rem;
+  border: none;
+
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 4%;
+  left: 10%;
+}
+button:hover {
+  background-color: rgba(171, 23, 23, 0.969);
+  color: rgb(252, 252, 252);
+}
